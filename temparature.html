@@ -35,16 +35,15 @@
 
           <div>
             <ul id="menu-content">
-              <li class="active">
+              <li>
                 <a href="index.html">
-                  <i class="fa fa-weight fa-lg text-warning"></i> Weight
-                  Converter
+                  <i class="fa fa-weight fa-lg"></i> Weight Converter
                 </a>
               </li>
-              <li>
+              <li class="active">
                 <a href="temparature.html">
-                  <i class="fa fa-thermometer-full fa-lg"></i> Temparature
-                  Converter
+                  <i class="fa fa-thermometer-full fa-lg  text-warning"></i>
+                  Temparature Converter
                 </a>
               </li>
 
@@ -81,34 +80,28 @@
         </div>
 
         <div class="col-lg-9 col-xs-6 col-sm-9 w-50 m-auto main-container">
-          <h6 class="display-4 text-center mb-5 mt-5">Weight Converter</h6>
+          <h6 class="display-4 text-center mb-5 mt-5">Temparature Converter</h6>
           <form>
             <div class="form-group">
               <input
                 type="number"
-                id="commonInput"
+                id="celsiusInput"
                 class="form-control form-control-md"
-                placeholder="Enter Pounds"
+                placeholder="Enter Celsius"
               />
             </div>
           </form>
           <div id="output">
             <div class="card bg-dark mb-2">
               <div class="card-block">
-                <h5>Grams :</h5>
-                <div id="gramsOutput"></div>
+                <h5>Farenheit :</h5>
+                <div id="farenOutput"></div>
               </div>
             </div>
             <div class="card bg-dark mb-2">
               <div class="card-block">
-                <h5>Kilograms :</h5>
-                <div id="kgOutput"></div>
-              </div>
-            </div>
-            <div class="card bg-dark mb-2">
-              <div class="card-block">
-                <h5>Ounces :</h5>
-                <div id="ozOutput"></div>
+                <h5>Kelvin :</h5>
+                <div id="kelvinOutput"></div>
               </div>
             </div>
           </div>
@@ -119,11 +112,10 @@
       </div>
     </div>
     <script>
-      document.getElementById("commonInput").addEventListener("input", e => {
-        let input = e.target.value;
-        document.getElementById("gramsOutput").innerHTML = input / 0.0022046;
-        document.getElementById("kgOutput").innerHTML = input / 2.2046;
-        document.getElementById("ozOutput").innerHTML = input / 16.0;
+      document.getElementById("celsiusInput").addEventListener("input", e => {
+        let celsius = e.target.value;
+        document.getElementById("farenOutput").innerHTML = celsius * 1.8 + 32.0;
+        document.getElementById("kelvinOutput").innerHTML = celsius + 273.15;
       });
     </script>
   </body>
