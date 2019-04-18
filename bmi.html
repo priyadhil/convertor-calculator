@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/common.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="header  bg-warning ">
+        <h1 class="text-center text-uppercase">
+          calculator & converter
+        </h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-xs-6 col-sm-3 nav-side-menu">
+          <div class="brand">Brand Logo</div>
+          <i
+            class="fa fa-bars fa-2x toggle-btn"
+            data-toggle="collapse"
+            data-target="#menu-content"
+          ></i>
+
+          <div>
+            <ul id="menu-content">
+              <li>
+                <a href="index.html">
+                  <i class="fa fa-weight fa-lg"></i> Weight Converter
+                </a>
+              </li>
+              <li>
+                <a href="temparature.html">
+                  <i class="fa fa-thermometer-full fa-lg"></i>
+                  Temparature Converter
+                </a>
+              </li>
+
+              <li class="active">
+                <a href="bmi.html"
+                  ><i class="fa fa-walking fa-lg  text-warning"></i> BMI
+                  Calculator
+                </a>
+              </li>
+
+              <li>
+                <a href="emi.html"
+                  ><i class="fa fa-globe fa-lg"></i> EMI Calculator
+                </a>
+              </li>
+
+              <li>
+                <a href="tax.html"
+                  ><i class="fa fa-money-check-alt fa-lg"></i> TAX Calculator</a
+                >
+              </li>
+              <li>
+                <a href="interest.html">
+                  <i class="fa fa-ruler fa-lg"></i> Interest Calculator
+                </a>
+              </li>
+
+              <li>
+                <a href="love.html">
+                  <i class="fa fa-heart fa-lg"></i> Love Calculator
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-9 col-xs-6 col-sm-9 w-50 m-auto main-container">
+          <h6 class="display-4 text-center mb-5 mt-5">BMI Calculator</h6>
+          <form>
+            <div class="form-group">
+              <input
+                type="number"
+                id="celsiusInput"
+                class="form-control form-control-md"
+                placeholder="Enter Celsius"
+              />
+            </div>
+          </form>
+          <div id="output">
+            <div class="card bg-dark mb-2">
+              <div class="card-block">
+                <h5>Farenheit :</h5>
+                <div id="farenOutput"></div>
+              </div>
+            </div>
+            <div class="card bg-dark mb-2">
+              <div class="card-block">
+                <h5>Kelvin :</h5>
+                <div id="kelvinOutput"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer text-center bg-warning">
+        copy 2019
+      </div>
+    </div>
+    <script>
+      document.getElementById("celsiusInput").addEventListener("input", e => {
+        let celsius = e.target.value;
+        document.getElementById("farenOutput").innerHTML = celsius * 1.8 + 32.0;
+        document.getElementById("kelvinOutput").innerHTML = celsius + 273.15;
+      });
+    </script>
+  </body>
+</html>
