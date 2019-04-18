@@ -1,0 +1,116 @@
+$primaryMenuColor: #2e353d;
+$secondaryMenuColor: #23282e;
+$mainColor: #ffa500;
+$secondaryColor: #4f5b69;
+$textColor: #e1ffff;
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: $secondaryColor;
+  color: $textColor;
+}
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  padding: 2.5rem 0 2.5rem 0;
+  h1 {
+    color: $textColor;
+  }
+}
+.nav-side-menu {
+  padding-left: 0;
+  padding-right: 0;
+  min-height: 100vh - 25.6vh;
+  // position: fixed;
+  overflow: auto;
+  background-color: $primaryMenuColor;
+  color: $textColor;
+  .brand {
+    background-color: $secondaryMenuColor;
+    display: block;
+    text-align: center;
+    font-size: 130%;
+    line-height: 50px;
+  }
+  .toggle-btn {
+    display: none;
+  }
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 35px;
+    cursor: pointer;
+    .active {
+      border-left: 3px solid $mainColor;
+      border-right: 3px solid $mainColor;
+      background-color: $secondaryColor;
+    }
+  }
+  li {
+    padding-left: 0;
+    border-left: 3px solid $primaryMenuColor;
+    border-bottom: $secondaryMenuColor;
+    &:hover {
+      border-left: 3px solid $mainColor;
+      border-right: 3px solid $mainColor;
+      background-color: $secondaryColor;
+      transition: all 1s ease;
+    }
+  }
+  li a {
+    text-decoration: none;
+    color: #e1ffff;
+  }
+  li a i {
+    padding-left: 10px;
+    width: 40px;
+    padding-right: 20px;
+  }
+}
+//Main-Container
+.main-container {
+  position: absolute;
+  left: 37%;
+  float: right;
+}
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
